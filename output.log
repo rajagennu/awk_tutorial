@@ -1,0 +1,174 @@
+ bash main.sh
+===================
+AWK Tutorial
+-------------------
+source file: answers.txt
+
+a,1,1
+b,3,4
+c,5,2
+d,6,1
+e,3,3
+f,3,7
+
+===================
+AWK IF-Else
+-------------------
+a,1,1
+No Duplicates
+No Duplicates
+No Duplicates
+e,3,3
+No Duplicates
+-------------------
+===================
+AWK While
+-------------------
+First lets understand what NF in awk. as per documentation 'NF is a predefined variable whose value is the number of fields in the current record. awk automatically updates the value of NF each time it reads a record. No matter how many fields there are, the last field in a record can be represented by '
+lets have a sample file, like CEOs list
+-------------------
+
+Rich Lesser, Boston Consulting Group,99%
+Shantanu Narayen, Adobe,99%
+Peter Pisters, MD Anderson Cancer Center,99%
+Gary C. Kelly, Southwest Airlines,98%
+Alfred F. Kelly, Jr. Visa Inc.,97%
+Satya Nadella, Microsoft,97%
+Charles C. Butt, H.E.B.,97%
+Ed Bastian, Delta Air Lines,97%
+Paul Cormier, Red Hat,97%
+Horacio D. Rozanski, Booz Allen Hamilton,97%
+
+-------------------
+Number of fields (we will get 3 fields per each line as we have 3 commad(,) separated fields
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+-------------------
+Lets iterate with awk
+-------------------
+0:Rich Lesser, Boston Consulting Group,99%
+1:Rich Lesser
+2: Boston Consulting Group
+3:99%
+0:Shantanu Narayen, Adobe,99%
+1:Shantanu Narayen
+2: Adobe
+3:99%
+0:Peter Pisters, MD Anderson Cancer Center,99%
+1:Peter Pisters
+2: MD Anderson Cancer Center
+3:99%
+0:Gary C. Kelly, Southwest Airlines,98%
+1:Gary C. Kelly
+2: Southwest Airlines
+3:98%
+0:Alfred F. Kelly, Jr. Visa Inc.,97%
+1:Alfred F. Kelly
+2: Jr. Visa Inc.
+3:97%
+0:Satya Nadella, Microsoft,97%
+1:Satya Nadella
+2: Microsoft
+3:97%
+0:Charles C. Butt, H.E.B.,97%
+1:Charles C. Butt
+2: H.E.B.
+3:97%
+0:Ed Bastian, Delta Air Lines,97%
+1:Ed Bastian
+2: Delta Air Lines
+3:97%
+0:Paul Cormier, Red Hat,97%
+1:Paul Cormier
+2: Red Hat
+3:97%
+0:Horacio D. Rozanski, Booz Allen Hamilton,97%
+1:Horacio D. Rozanski
+2: Booz Allen Hamilton
+3:97%
+-------------------
+-------------------
+AWK Selectors
+Selectors used for deciding whether a particular awk action should be executed or not.
+For example display only CEOs with their name starting 'S'
+-------------------
+Shantanu Narayen, Adobe,99%
+Satya Nadella, Microsoft,97%
+-------------------
+relational expressions
+-------------------
+Rich Lesser, Boston Consulting Group,99%
+Shantanu Narayen, Adobe,99%
+Peter Pisters, MD Anderson Cancer Center,99%
+-------------------
+Range patterns
+-------------------
+Peter Pisters99%
+Gary C. Kelly98%
+Alfred F. Kelly97%
+Satya Nadella97%
+-------------------
+===================
+Special expression patterns include BEGIN and END which denote program initialization and end. The BEGIN pattern matches the beginning of the input, before the first record is processed. The END pattern matches the end of the input, after the last record has been processed.
+-------------------
+starting list of top 10 CEOs
+Rich Lesser Boston Consulting Group99%
+Shantanu Narayen Adobe99%
+Peter Pisters MD Anderson Cancer Center99%
+Gary C. Kelly Southwest Airlines98%
+Alfred F. Kelly Jr. Visa Inc.97%
+Satya Nadella Microsoft97%
+Charles C. Butt H.E.B.97%
+Ed Bastian Delta Air Lines97%
+Paul Cormier Red Hat97%
+Horacio D. Rozanski Booz Allen Hamilton97%
+end list of top 10 CEOs
+-------------------
+===================
+AWK supports && || ! 
+-------------------
+ I would like to see the CEO with score greater than 97% and starting with letter S
+-------------------
+Shantanu Narayen
+===================
+AWK variables
+main.sh -> Print full line
+,  -> Field 1 and File 2...
+NR-> Number of row, usually print the current row number
+1   Hello
+2   GoodMorning
+NF-> Number of fields, when you call NF it will print number of fields, and when you call  it will print last field, so if you have a use case like you would like to get last field, then  is the best case
+905
+345
+3
+3
+-------------------
+Dont mess with IFS and RS unless you know what you are doing.
+-------------------
+===================
+awk length
+-------------------
+number of chars in line 1=40
+number of chars in line 2=27
+number of chars in line 3=44
+number of chars in line 4=37
+number of chars in line 5=34
+number of chars in line 6=28
+number of chars in line 7=27
+number of chars in line 8=31
+number of chars in line 9=25
+number of chars in line 10=44
+-------------------
+===================
+Bottom Line
+AWK is a great text/file processing/manipulation with so many use cases. I just added what I have learned, if you like this post, please subscribe to my blog and add a star on my gitrepo.
+Thakn you.
+ 
