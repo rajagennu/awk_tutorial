@@ -1,3 +1,4 @@
 - https://www.math.utah.edu/docs/info/gawk_10.html#SEC103
 - https://phoenixnap.com/kb/awk-command-in-linux
 - https://askubuntu.com/questions/1377370/delete-a-file-if-multiple-conditions-are-met/1377381#1377381
+- https://www.gnu.org/software/gawk/manual/gawk.html#For-Statement
